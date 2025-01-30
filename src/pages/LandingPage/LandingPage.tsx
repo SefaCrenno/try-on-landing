@@ -94,8 +94,8 @@ export default function LandingPage() {
       <Feature />
       <FeaturesSection />
       <TestimonialsSection
-        title="Trusted by developers worldwide"
-        description="Join thousands of developers who are already building the future with our AI platform"
+        title="Trending Insights from Crainno"
+        description="Stay ahead with the latest tweets from Crainno. Discover industry trends, expert insights, and real-time updates—all in one place!"
         testimonials={testimonials}
       />
       <Pricing />

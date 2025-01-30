@@ -90,17 +90,16 @@ export function FeaturesSection() {
   return (
     <section className="w-full bg-[#030303] py-20 lg:py-32 page-padding-x">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
-      <div className="container mx-auto relative z-10">
-        <BentoGrid className="lg:grid-rows-3">
-          {features.map((feature) => (
-            <BentoCard
-              key={feature.name}
-              {...feature}
-              className="text-white border border-white/20"
-            />
-          ))}
-        </BentoGrid>
-      </div>
+
+      <BentoGrid className="lg:grid-rows-3">
+        {features.map((feature) => (
+          <BentoCard
+            key={feature.name}
+            {...feature}
+            className="text-white border border-white/20"
+          />
+        ))}
+      </BentoGrid>
     </section>
   );
 }

@@ -63,6 +63,6 @@
 
 @layer components {
   .page-padding-x {
-    @apply px-[80px];
+    @apply px-[20px] md:px-[80px];
   }
 }

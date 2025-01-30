@@ -26,26 +26,35 @@ function Feature() {
     <div className="w-full bg-[#030303] py-20 lg:py-40 page-padding-x">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
       <div className="w-full relative z-10">
-        <div className="flex gap-4">
-          <div className="w-1/3 flex flex-col gap-4">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
+          <div className="w-full lg:w-1/3 flex flex-col gap-4">
             <div>
-              <Badge className="bg-primary-purple hover:bg-primary-purple/90 text-white">
-                Platform
-              </Badge>
+              <div className="inline-flex gap-2 bg-[#030303] rounded-lg p-1">
+                <Badge className="bg-gradient-to-r from-purple-600/80 to-purple-500/80 hover:from-purple-500/90 hover:to-purple-400/90 text-white/90 transition-all duration-300">
+                  Android
+                </Badge>
+                <Badge className="bg-gradient-to-r from-pink-600/80 to-pink-500/80 hover:from-pink-500/90 hover:to-pink-400/90 text-white/90 transition-all duration-300">
+                  iOS
+                </Badge>
+              </div>
             </div>
             <div className="flex gap-2 flex-col">
-              <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-white/90 to-pink-500">
-                Something new!
+              <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                  Unveiling Trends, Insights, and Innovation
+                </span>
               </h2>
               <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-white">
-                Managing a small business today is already tough.
+                Explore the latest updates, expert perspectives, and
+                groundbreaking ideas shaping the future. Stay informed, stay
+                inspired, and stay ahead.
               </p>
             </div>
           </div>
 
-          <div className="pt-12 w-2/3">
+          <div className="w-full lg:w-2/3 flex justify-center items-center">
             <div
-              className="relative w-full h-0 pb-[56.25%] overflow-hidden rounded-2xl select-none border border-primary-purple/20"
+              className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[768px] max-w-[1024px] overflow-hidden rounded-2xl select-none border border-primary-purple/20"
               onMouseMove={onMouseMove}
               onMouseUp={() => setOnMouseDown(false)}
               onTouchMove={onMouseMove}
