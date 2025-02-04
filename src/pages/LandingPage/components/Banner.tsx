@@ -91,20 +91,23 @@ export function Banner({
               {" "}
               <a
                 href={learnMoreUrl}
-                target="_blank"
+                target="_self"
                 className="text-gray-700 underline transition-colors hover:text-black"
+                // onClick={() => {
+                //   console.log("clicked", learnMoreUrl);
+                // }}
               >
-                Learn more
+                Learn More
               </a>
             </>
           )}
         </p>
       </div>
 
-      <div className="flex items-center sm:-my-1">
+      <div className="flex items-center sm:-my-1 cursor-pointer group">
         <button
           type="button"
-          className="whitespace-nowrap rounded-md border border-green-700/50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-green-500/10"
+          className="whitespace-nowrap rounded-md border border-green-700/50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-green-500/10 group-hover:cursor-pointer"
           onClick={action.onClick}
         >
           {action.label}
@@ -113,7 +116,7 @@ export function Banner({
 
       <button
         type="button"
-        className="absolute inset-y-0 right-2.5 p-1 text-sm text-green-700 underline transition-colors hover:text-green-900"
+        className="absolute inset-y-0 right-2.5 p-1 text-sm text-green-700 underline transition-colors hover:text-green-900 cursor-pointer"
         onClick={onHide}
       >
         <X className="h-[18px] w-[18px]" />

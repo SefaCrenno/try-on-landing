@@ -5,7 +5,9 @@ import { Feature } from "../../components/ui/feature-with-image-comparison";
 import { FeaturesSection } from "../../components/blocks/features-section";
 import Hero from "./components/Hero";
 import { Banner } from "./components/Banner";
-
+import Navbar from "../../components/ui/Navbar";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const testimonials = [
   {
     author: {
@@ -77,32 +79,43 @@ const mockSubscribe = async (email: string) => {
 };
 
 export default function LandingPage() {
+  const navigate = useNavigate();
+  const [showBanner, setShowBanner] = useState(true);
   return (
     <>
-      <Banner
-        show
-        onHide={() => {}}
-        icon={null}
-        title="🚀 Get started with our AI platform"
-        action={{
-          onClick: () => {},
-          label: "Start now",
-        }}
-        learnMoreUrl="/"
-      ></Banner>
-      <Hero />
-      <Feature />
-      <FeaturesSection />
-      <TestimonialsSection
-        title="Trending Insights from Crainno"
-        description="Stay ahead with the latest tweets from Crainno. Discover industry trends, expert insights, and real-time updates—all in one place!"
-        testimonials={testimonials}
-      />
-      <Pricing />
-      <NewsletterSection
-        title="Join our newsletter"
-        onSubscribe={mockSubscribe}
-      />
+      <Navbar />
+      <div className="pt-16 relative z-50">
+        <Banner
+          show={showBanner}
+          onHide={() => {
+            setShowBanner(false);
+          }}
+          icon={null}
+          title="🚀 Get started with our CrainnoAI with %25 discount for a limited time"
+          action={{
+            onClick: () => {
+              navigate("/download");
+            },
+            label: "Download Now",
+          }}
+          learnMoreUrl="#pricing"
+        ></Banner>
+      </div>
+      <main className="pt-8">
+        <Hero />
+        <Feature />
+        <FeaturesSection />
+        <TestimonialsSection
+          title="Trending Insights from Crainno"
+          description="Stay ahead with the latest tweets from Crainno. Discover industry trends, expert insights, and real-time updates—all in one place!"
+          testimonials={testimonials}
+        />
+        <Pricing />
+        <NewsletterSection
+          title="Join our newsletter"
+          onSubscribe={mockSubscribe}
+        />
+      </main>
     </>
   );
 }

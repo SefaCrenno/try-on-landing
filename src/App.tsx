@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import TryOnPage from "./pages/tryOn/TryOnPage";
 import NotFoundPage from "./pages/http/NotFoundPage";
+import DownloadPage from "./pages/DownloadPage/DownloadPage";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/try-on" element={<TryOnPage />} />
-
+        <Route path="/download" element={<DownloadPage />} />
+        {/* <Route path="/try-on" element={<TryOnPage />} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

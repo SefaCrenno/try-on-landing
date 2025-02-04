@@ -1,5 +1,5 @@
 import { Home, User, Briefcase } from "lucide-react";
-import { NavBar } from "../../components/blocks/tubelight-navbar";
+import { TubeLightNavbar } from "../../components/blocks/tubelight-navbar";
 import { useState } from "react";
 import AutoMaskPage from "./components/AutoMaskPage";
 import CatPzcTryOn from "./components/CatPzcTryOn";
@@ -16,7 +16,7 @@ export default function TryOnPage() {
 
   return (
     <section className="w-full bg-[#030303]">
-      <NavBar
+      <TubeLightNavbar
         items={navItems}
         activeTab={activeTab}
         setActiveTab={setActiveTab}

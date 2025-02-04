@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface PricingPlan {
   name: string;
@@ -10,22 +11,6 @@ interface PricingPlan {
   features: string[];
   isPopular?: boolean;
 }
-
-// Professional
-// Perfect for regular shoppers and small businesses
-// 	•	$99/month
-// 	•	Unlimited virtual try-ons
-// 	•	Advanced style analytics
-// 	•	10GB storage
-// 	•	Priority support
-
-// Enterprise
-// Tailored for fashion brands and e-commerce platforms
-// 	•	$299/month
-// 	•	Full access to enterprise analytics
-// 	•	Unlimited storage
-// 	•	Custom integrations
-// 	•	Dedicated support
 
 const pricingPlans: PricingPlan[] = [
   {
@@ -77,8 +62,9 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 export default function Pricing() {
+  const navigate = useNavigate();
   return (
-    <section className="py-24 bg-[#030303]">
+    <section className="py-24 bg-[#030303]" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-5xl">
@@ -138,7 +124,10 @@ export default function Pricing() {
                   plan.isPopular
                     ? "bg-purple-600 text-white hover:bg-purple-700"
                     : "bg-purple-900 text-purple-300 hover:bg-purple-800"
-                } transition-colors duration-200`}
+                } transition-colors duration-200 cursor-pointer`}
+                onClick={() => {
+                  navigate("/download");
+                }}
               >
                 Get started
               </button>

@@ -15,7 +15,7 @@ interface NavBarProps {
   setActiveTab: (tab: string) => void;
 }
 
-export function NavBar({
+export function TubeLightNavbar({
   items,
   className,
   activeTab,

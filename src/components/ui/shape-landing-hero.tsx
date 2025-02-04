@@ -193,7 +193,7 @@ function HeroGeometric({
 
             <Button
               onClick={() => {
-                navigate("/try-on");
+                navigate("/download");
               }}
               className="bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold py-2 px-6 rounded hover:scale-105 transition-transform cursor-pointer"
             >
