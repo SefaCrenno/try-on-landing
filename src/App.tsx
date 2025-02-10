@@ -3,6 +3,7 @@ import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import NotFoundPage from "./pages/http/NotFoundPage";
 import DownloadPage from "./pages/DownloadPage/DownloadPage";
+import TryOnPage from "./pages/tryOn/TryOnPage";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/download" element={<DownloadPage />} />
-        {/* <Route path="/try-on" element={<TryOnPage />} /> */}
+        <Route path="/try-on" element={<TryOnPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

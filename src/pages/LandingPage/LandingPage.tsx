@@ -8,6 +8,9 @@ import { Banner } from "./components/Banner";
 import Navbar from "../../components/ui/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { FeaturesSectionWithBentoGrid } from "../../components/ui/full-content-feature";
+import { FaqSection } from "../../components/ui/faq";
+
 const testimonials = [
   {
     author: {
@@ -78,13 +81,36 @@ const mockSubscribe = async (email: string) => {
   return { success: true };
 };
 
+const FAQ_ITEMS = [
+  {
+    question: "What is CrainnoAI?",
+    answer:
+      "CrainnoAI is an innovative AI-powered fashion platform that helps you discover, try on, and shop for clothes virtually. Our advanced technology provides personalized style recommendations and a seamless virtual try-on experience.",
+  },
+  {
+    question: "How does the virtual try-on work?",
+    answer:
+      "Our virtual try-on feature uses advanced AI technology to create a realistic visualization of how clothes will look on you. Simply upload a photo or use your camera, and our AI will show you how different items would look on your body type.",
+  },
+  {
+    question: "Is my data secure?",
+    answer:
+      "Yes, we take data security very seriously. All your personal information and photos are encrypted and stored securely. We never share your data with third parties without your explicit consent.",
+  },
+  {
+    question: "What platforms do you support?",
+    answer:
+      "CrainnoAI is available on both iOS and Android devices. You can download our app from the App Store or Google Play Store and start exploring fashion right away.",
+  },
+];
+
 export default function LandingPage() {
   const navigate = useNavigate();
   const [showBanner, setShowBanner] = useState(true);
   return (
     <>
       <Navbar />
-      <div className="pt-16 relative z-50">
+      <div className="pt-16 relative z-40">
         <Banner
           show={showBanner}
           onHide={() => {
@@ -103,6 +129,7 @@ export default function LandingPage() {
       </div>
       <main className="pt-8">
         <Hero />
+        <FeaturesSectionWithBentoGrid></FeaturesSectionWithBentoGrid>
         <Feature />
         <FeaturesSection />
         <TestimonialsSection
@@ -111,6 +138,19 @@ export default function LandingPage() {
           testimonials={testimonials}
         />
         <Pricing />
+        <FaqSection
+          title="Frequently Asked Questions"
+          description="Everything you need to know about CrainnoAI"
+          items={FAQ_ITEMS}
+          contactInfo={{
+            title: "Still have questions?",
+            description: "Our support team is here to help you",
+            buttonText: "Contact Support",
+            onContact: () => {
+              window.location.href = "mailto:support@crainno.ai";
+            },
+          }}
+        />
         <NewsletterSection
           title="Join our newsletter"
           onSubscribe={mockSubscribe}
