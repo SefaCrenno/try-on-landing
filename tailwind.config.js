@@ -5,9 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#9818FA",
-        secondary: "#FCA5D5",
-        dark: "000000",
+        dark: "#030303",
       },
       maxWidth: {
         container: "1280px",

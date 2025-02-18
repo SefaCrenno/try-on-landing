@@ -1,12 +1,8 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Mail } from "lucide-react";
-import { ContactDialog } from "./contact-dialog";
-
-// cn utility function
-const cn = (...classes: (string | undefined | boolean)[]) => {
-  return classes.filter(Boolean).join(" ");
-};
+import { ChevronDown } from "lucide-react";
+import { cn } from "../../lib/utils";
+import { useInView } from "react-intersection-observer";
 
 interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
   title: string;
@@ -24,19 +20,23 @@ interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
-  ({ className, title, description, items, contactInfo, ...props }, ref) => {
-    const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  ({ className, title, description, items, ...props }, ref) => {
+    //inView
+    const { ref: ref1, inView } = useInView({
+      threshold: 0.5,
+      triggerOnce: true,
+    });
 
     return (
       <section
-        ref={ref}
+        ref={ref1}
         className={cn("py-16 w-full bg-[#030303]", className, "page-padding-x")}
         {...props}
       >
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center gap-4 text-center"
         >
@@ -65,34 +65,6 @@ const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
             />
           ))}
         </div>
-
-        {/* Contact Section */}
-        {contactInfo && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-md mx-auto mt-12 p-6 rounded-lg text-center border border-purple-600/20"
-          >
-            <div className="inline-flex items-center justify-center p-1.5 rounded-full mb-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
-              <Mail className="h-4 w-4 text-purple-500" />
-            </div>
-            <p className="text-sm font-medium text-white mb-1">
-              {contactInfo.title}
-            </p>
-            <p className="text-xs text-gray-300 mb-4">
-              {contactInfo.description}
-            </p>
-            <button
-              onClick={() => setIsDialogOpen(true)}
-              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              {contactInfo.buttonText}
-            </button>
-          </motion.div>
-        )}
-
-        <ContactDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
       </section>
     );
   }
@@ -110,11 +82,16 @@ const FaqItem = React.forwardRef<
   const [isOpen, setIsOpen] = React.useState(false);
   const { question, answer, index } = props;
 
+  //inView
+  const { ref: ref1, inView } = useInView({
+    threshold: 0.5,
+  });
+
   return (
     <motion.div
-      ref={ref}
+      ref={ref1}
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 10 }}
       transition={{ duration: 0.2, delay: index * 0.1 }}
       className={cn(
         "group rounded-lg",
@@ -127,7 +104,7 @@ const FaqItem = React.forwardRef<
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between hover:bg-transparent text-left"
+        className="w-full px-6 py-4 flex items-center justify-between hover:bg-transparent text-left cursor-pointer"
       >
         <h3
           className={cn(

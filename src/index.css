@@ -57,6 +57,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
   .cursor-pointer {
     cursor: pointer;
   }
@@ -67,5 +68,21 @@
 @layer components {
   .page-padding-x {
     @apply px-[20px] md:px-[80px];
+  }
+
+  .text-basic {
+    @apply text-lg leading-relaxed text-gray-100;
+  }
+
+  .small-text-basic {
+    @apply text-sm leading-relaxed text-gray-100;
+  }
+
+  .small-title-basic {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
+  }
+
+  .small-sub-title-basic {
+    @apply text-lg sm:text-xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
   }
 }

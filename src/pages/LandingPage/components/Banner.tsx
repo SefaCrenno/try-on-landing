@@ -68,6 +68,7 @@ export function Banner({
   action,
   learnMoreUrl,
 }: BannerProps) {
+  console.log(icon);
   if (!show) return null;
 
   return (

@@ -36,7 +36,7 @@ export function TestimonialCard({ author, text, href }: TestimonialCardProps) {
         </svg>
       </div>
 
-      <p className="text-base text-gray-700 dark:text-gray-300 italic break-words line-clamp-4">
+      <p className="text-base text-gray-700 dark:text-gray-300 italic break-words line-clamp-5">
         "{text}"
       </p>
 

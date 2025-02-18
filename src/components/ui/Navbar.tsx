@@ -12,9 +12,10 @@ export default function Navbar() {
       <div className="w-full page-padding-x">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/luuls.png" className="w-6 h-6"></img>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-              CrainnoAI
+              Luuls AI
             </span>
           </Link>
 

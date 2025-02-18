@@ -42,11 +42,12 @@ export function ContactDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Contact Support</DialogTitle>
+          <DialogTitle>Contact Us</DialogTitle>
           <DialogDescription>
             Send us a message and we'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
+
         <AnimatePresence mode="wait">
           {!isSubmitted ? (
             <motion.form
@@ -91,7 +92,7 @@ export function ContactDialog({
               </div>
               <button
                 type="submit"
-                className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:opacity-90 transition-opacity"
+                className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
               >
                 Send Message
               </button>
