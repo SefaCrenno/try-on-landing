@@ -1,16 +1,10 @@
 import { Button } from "./button";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Mail,
-  Link,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
 import { ContactDialog } from "./contact-dialog";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 function StackedCircularFooter() {
   //inView
