@@ -1,11 +1,15 @@
+//TODO DO NOT USE THIS FILE SINCE TAILWIND 4 IS NOT SUPPORTED
+
 /** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: ["class"],
+
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        dark: "#030303",
+        //todo okumuyor...
+        "custom-dark": "#030303",
+        background: "#ffffff",
       },
       maxWidth: {
         container: "1280px",

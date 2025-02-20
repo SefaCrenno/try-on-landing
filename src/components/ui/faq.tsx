@@ -20,7 +20,7 @@ interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
-  ({ className, title, description, items, ...props }, ref) => {
+  ({ className, title, description, items, ...props }) => {
     //inView
     const { ref: ref1, inView } = useInView({
       threshold: 0.5,
@@ -40,17 +40,15 @@ const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center gap-4 text-center"
         >
-          <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-5xl">
-            <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+          <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-balance">
               {title}
             </span>
           </h2>
           {description && (
-            <div className="w-full flex justify-center">
-              <p className="max-w-2xl text-lg text-gray-300 text-balance">
-                {description}
-              </p>
-            </div>
+            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
+              {description}
+            </p>
           )}
         </motion.div>
 
@@ -78,13 +76,14 @@ const FaqItem = React.forwardRef<
     answer: string;
     index: number;
   }
->((props, ref) => {
+>((props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { question, answer, index } = props;
 
   //inView
   const { ref: ref1, inView } = useInView({
     threshold: 0.5,
+    triggerOnce: true,
   });
 
   return (

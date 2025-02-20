@@ -20,7 +20,7 @@ function Grid({
   return (
     <svg
       className={cn(
-        "pointer-events-none absolute inset-0 text-black/10",
+        "pointer-events-none absolute inset-0 text-gray-300",
         className
       )}
       width="100%"
@@ -68,24 +68,23 @@ export function Banner({
   action,
   learnMoreUrl,
 }: BannerProps) {
-  console.log(icon);
   if (!show) return null;
 
   return (
-    <div className="relative isolate flex flex-col justify-between gap-3 overflow-hidden rounded-lg border border-green-600/15 bg-gradient-to-r from-lime-100/80 to-emerald-100/80 py-3 pl-4 pr-12 sm:flex-row sm:items-center sm:py-2">
+    <div className="relative isolate flex flex-col justify-between gap-3 overflow-hidden rounded-lg border border-gray-300 bg-gradient-to-r from-gray-100 to-gray-50 py-4 pl-5 pr-14 shadow-md sm:flex-row sm:items-center sm:py-3">
       <Grid
-        cellSize={13}
+        cellSize={14}
         patternOffset={[0, -1]}
-        className="text-black/30 mix-blend-overlay [mask-image:linear-gradient(to_right,black,transparent)] md:[mask-image:linear-gradient(to_right,black_60%,transparent)]"
+        className="text-gray-400 mix-blend-overlay [mask-image:linear-gradient(to_right,black,transparent)] md:[mask-image:linear-gradient(to_right,black_60%,transparent)]"
       />
 
       <div className="flex items-center gap-3">
         {icon && (
-          <div className="hidden rounded-full border border-green-600/50 bg-white/50 p-1 shadow-[inset_0_0_1px_1px_#fff] sm:block">
+          <div className="hidden rounded-full border border-gray-400 bg-white p-2 shadow-sm sm:block">
             {icon}
           </div>
         )}
-        <p className="text-sm text-gray-900">
+        <p className="text-sm font-medium text-gray-800">
           {title}
           {learnMoreUrl && (
             <>
@@ -93,10 +92,7 @@ export function Banner({
               <a
                 href={learnMoreUrl}
                 target="_self"
-                className="text-gray-700 underline transition-colors hover:text-black"
-                // onClick={() => {
-                //   console.log("clicked", learnMoreUrl);
-                // }}
+                className="text-purple-600 underline transition-colors hover:text-purple-800"
               >
                 Learn More
               </a>
@@ -105,10 +101,10 @@ export function Banner({
         </p>
       </div>
 
-      <div className="flex items-center sm:-my-1 cursor-pointer group">
+      <div className="flex items-center sm:-my-1">
         <button
           type="button"
-          className="whitespace-nowrap rounded-md border border-green-700/50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-green-500/10 group-hover:cursor-pointer"
+          className="whitespace-nowrap rounded-md border border-purple-600 bg-purple-50 px-4 py-1.5 text-sm font-medium text-purple-700 transition-all hover:bg-purple-100 hover:text-purple-900"
           onClick={action.onClick}
         >
           {action.label}
@@ -117,10 +113,10 @@ export function Banner({
 
       <button
         type="button"
-        className="absolute inset-y-0 right-2.5 p-1 text-sm text-green-700 underline transition-colors hover:text-green-900 cursor-pointer"
+        className="absolute inset-y-0 right-3 p-1 text-gray-500 transition-colors hover:text-purple-600 cursor-pointer"
         onClick={onHide}
       >
-        <X className="h-[18px] w-[18px]" />
+        <X className="h-[20px] w-[20px]" />
       </button>
     </div>
   );

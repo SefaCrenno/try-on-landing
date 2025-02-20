@@ -8,15 +8,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030303]/80 backdrop-blur-xl border-b border-purple-600/20">
-      <div className="w-full page-padding-x">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-purple-600/20 w-full">
+      <div className="max-component-width">
+        <div className="flex items-center justify-between h-16 page-padding-x">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src="/luuls.png" className="w-6 h-6"></img>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-              Luuls AI
-            </span>
+            <span className="text-xl font-bold luuls-gradient">Luuls AI</span>
           </Link>
 
           {/* Navigation Links */}

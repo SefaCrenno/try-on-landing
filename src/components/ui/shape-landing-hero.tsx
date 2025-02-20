@@ -5,6 +5,7 @@ import { Circle } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
+import { GlareCardDemo } from "./code.demo";
 
 function ElegantShape({
   className,
@@ -73,12 +74,14 @@ function ElegantShape({
 }
 
 function HeroGeometric({
-  badge = "Design Collective",
-  title1 = "Elevate Your Digital Vision",
-  title2 = "Crafting Exceptional Websites",
+  badge = "Luuls AI",
+  title1 = "All with AI",
+  titleHighlight = "Luuls AI",
+  title2 = "Try On, Transform, Generate",
 }: {
   badge?: string;
   title1?: string;
+  titleHighlight?: string;
   title2?: string;
 }) {
   const fadeUpVariants = {
@@ -97,9 +100,9 @@ function HeroGeometric({
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+    <div className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden bg-custom-dark py-10">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
-
+      {/* 
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
           delay={0.3}
@@ -145,11 +148,11 @@ function HeroGeometric({
           gradient="from-purple-600/[0.15]"
           className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
         />
-      </div>
+      </div> */}
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
+      <div className="relative z-10 container mx-auto px-4 md:px-6 mt-30">
+        <div className="w-full mx-auto text-center">
+          {/* <motion.div
             custom={0}
             variants={fadeUpVariants}
             initial="hidden"
@@ -158,17 +161,21 @@ function HeroGeometric({
           >
             <Circle className="h-2 w-2 fill-pink-500/80" />
             <span className="text-sm text-white/60 tracking-wide">{badge}</span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             custom={1}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
+            className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                {title1}
+                {title1}{" "}
+                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                  {titleHighlight}
+                </span>
               </span>
               <br />
               <span
@@ -187,15 +194,19 @@ function HeroGeometric({
             initial="hidden"
             animate="visible"
           >
-            <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-white/40 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4">
               Your digital wardrobe, career swap, and creative studio in one.
             </p>
+
+            <div className="py-10 px-4 md:px-6 bg-custom-dark w-full">
+              <GlareCardDemo />
+            </div>
 
             <Button
               onClick={() => {
                 navigate("/download");
               }}
-              className="bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold py-2 px-6 rounded hover:scale-105 transition-transform cursor-pointer"
+              className="text-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold py-2 px-10 rounded hover:scale-105 transition-transform cursor-pointer"
             >
               Get Started
             </Button>
@@ -203,7 +214,7 @@ function HeroGeometric({
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/80 pointer-events-none" />
     </div>
   );
 }

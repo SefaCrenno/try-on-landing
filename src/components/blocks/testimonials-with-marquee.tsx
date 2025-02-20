@@ -2,9 +2,10 @@ import { useInView } from "react-intersection-observer";
 import { cn } from "../../lib/utils";
 import { TestimonialCard, TestimonialAuthor } from "../ui/testimonial-card";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 interface TestimonialsSectionProps {
-  title: string;
+  title: React.ReactNode;
   description: string;
   testimonials: Array<{
     author: TestimonialAuthor;
@@ -28,7 +29,7 @@ export function TestimonialsSection({
     <section
       ref={ref}
       className={cn(
-        "relative overflow-hidden bg-dark",
+        "relative overflow-hidden bg-custom-dark",
         "py-20 sm:py-32",
         className
       )}
@@ -38,19 +39,18 @@ export function TestimonialsSection({
         <div className="absolute inset-y-0 left-1/2 -z-10 ml-[-38rem] w-[81.25rem] bg-gradient-to-r from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
       </div>
 
-      <div className="mx-auto flex max-w-container flex-col items-center gap-8 px-6 sm:gap-16">
+      <div className="flex flex-col items-center gap-8 px-6 sm:gap-16 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
           transition={{ duration: 0.5 }}
+          className="page-padding-x max-component-width"
         >
           <div className="flex flex-col items-center gap-4 text-center">
-            <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-5xl">
-              <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
-                {title}
-              </span>
+            <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight">
+              {title}
             </h2>
-            <p className="max-w-2xl text-lg text-gray-300 text-balance">
+            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
               {description}
             </p>
           </div>
@@ -60,30 +60,22 @@ export function TestimonialsSection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <div className="relative w-full overflow-hidden">
-            <div className="flex gap-8 animate-[scroll_50s_linear_infinite] py-10">
-              {[...Array(2)].map((_, setIndex) => (
-                <motion.div
-                  key={setIndex}
-                  initial={{ x: "0%" }}
-                  animate={{ x: "-100%" }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 60,
-                    ease: "linear",
-                  }}
-                  className="flex shrink-0 gap-8"
-                >
-                  {testimonials.map((testimonial, i) => (
-                    <TestimonialCard
-                      key={`${setIndex}-${i}`}
-                      {...testimonial}
-                    />
-                  ))}
-                </motion.div>
+            <Marquee
+              gradient={true}
+              gradientColor="#030303"
+              speed={80}
+              pauseOnHover={false}
+              className="overflow-hidden py-5"
+            >
+              {testimonials.map((testimonial, i) => (
+                <div key={i} className="mx-4 py-3">
+                  <TestimonialCard {...testimonial} />
+                </div>
               ))}
-            </div>
+            </Marquee>
 
             {/* Gradient Overlays */}
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-dark" />

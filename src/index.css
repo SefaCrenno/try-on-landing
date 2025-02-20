@@ -1,7 +1,10 @@
 @import "tailwindcss";
 /* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+    @tailwind components;
+    @tailwind utilities; */
+@theme {
+  --color-background: #030303;
+}
 
 @layer base {
   :root {
@@ -61,7 +64,24 @@
   .cursor-pointer {
     cursor: pointer;
   }
+
+  .aspect-image {
+    aspect-ratio: 4/3;
+  }
+  .aspect-iphone {
+    aspect-ratio: 9/19.5;
+  }
+
+  .luuls-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+
+  .luuls-white {
+    /* @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600; */
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100;
+  }
 }
+
 @layer base {
 }
 
@@ -71,18 +91,22 @@
   }
 
   .text-basic {
-    @apply text-lg leading-relaxed text-gray-100;
+    @apply text-xl leading-relaxed text-gray-100;
   }
 
   .small-text-basic {
-    @apply text-sm leading-relaxed text-gray-100;
+    @apply text-lg leading-relaxed text-gray-100;
   }
 
   .small-title-basic {
-    @apply text-xl sm:text-2xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
+    @apply text-xl sm:text-3xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
   }
 
   .small-sub-title-basic {
-    @apply text-lg sm:text-xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
+    @apply text-lg sm:text-2xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500/90 to-pink-500/90 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300;
+  }
+
+  .max-component-width {
+    @apply max-w-[1400px] mx-auto;
   }
 }

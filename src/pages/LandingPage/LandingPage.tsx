@@ -1,6 +1,5 @@
 import Pricing from "./components/Pricing";
 import { TestimonialsSection } from "../../components/blocks/testimonials-with-marquee";
-import { NewsletterSection } from "../../components/blocks/newsletter-section";
 import { Feature } from "../../components/ui/feature-with-image-comparison";
 import Hero from "./components/Hero";
 import { Banner } from "./components/Banner";
@@ -70,17 +69,6 @@ const testimonials = [
   },
 ];
 
-const mockSubscribe = async (email: string) => {
-  // API request simulation
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  if (email.includes("error")) {
-    return { success: false, error: "Something went wrong!" };
-  }
-
-  return { success: true };
-};
-
 const FAQ_ITEMS = [
   {
     question: "How Does Luuls AI Work?",
@@ -116,7 +104,7 @@ export default function LandingPage() {
     <>
       <Navbar />
 
-      <div className="pt-16 relative z-40">
+      <div className="pt-17 relative z-40 max-component-width">
         <Banner
           show={showBanner}
           onHide={() => {
@@ -134,7 +122,7 @@ export default function LandingPage() {
         ></Banner>
       </div>
 
-      <main className="pt-8">
+      <main className="">
         <Hero />
 
         <Feature />
@@ -142,7 +130,12 @@ export default function LandingPage() {
         <FeaturesSectionWithBentoGrid />
 
         <TestimonialsSection
-          title="Trending Insights from Luuls AI"
+          title={
+            <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-balance">
+              Trending Insights from{" "}
+              <span className="luuls-gradient">Luuls AI</span>
+            </h2>
+          }
           description="Stay ahead with the latest tweets from Luuls AI. Discover industry trends, expert insights, and real-time updates—all in one place!"
           testimonials={testimonials}
         />
@@ -154,11 +147,6 @@ export default function LandingPage() {
           description="Everything you need to know about CrainnoAI"
           items={FAQ_ITEMS}
         />
-
-        {/* <NewsletterSection
-          title="Join our newsletter"
-          onSubscribe={mockSubscribe}
-        /> */}
       </main>
 
       <StackedCircularFooter

@@ -170,7 +170,7 @@ const ManualMaskPage = () => {
   };
 
   return (
-    <div className="w-full bg-[#030303] py-20 lg:py-40 px-4 relative select-none">
+    <div className="w-full bg-[#030303] py-20 px-4 relative select-none">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl pointer-events-none" />
       <div className="relative z-10 max-w-screen-xl mx-auto px-4">
         <h1 className="text-3xl md:text-5xl tracking-tighter font-regular mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-white/90 to-pink-500">

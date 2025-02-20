@@ -10,7 +10,7 @@ export default function DownloadPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-component-width px-4 py-20 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
@@ -60,7 +60,7 @@ export default function DownloadPage() {
           {/* Phone Mockup */}
           <div className="mt-20 flex justify-center">
             <img
-              src="/images/mockup.png" // Bu görseli projenize eklemeniz gerekecek
+              src="/screenshots/home-left-portrait.png" // Bu görseli projenize eklemeniz gerekecek
               alt="App mockup"
               className="w-full max-w-md rounded-3xl shadow-2xl shadow-purple-600/20"
             />

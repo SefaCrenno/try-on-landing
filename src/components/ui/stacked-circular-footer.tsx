@@ -23,13 +23,13 @@ function StackedCircularFooter({
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   return (
-    <footer className="bg-dark py-16" ref={ref}>
+    <footer className="bg-custom-dark py-16" ref={ref}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center">
           {/* Logo Section */}
-          <div className="mb-12 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-500/20 p-5">
+          {/* <div className="mb-12 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-500/20 p-5">
             <img src="/luuls.png" alt="Luuls AI" width={70} height={70} />
-          </div>
+          </div> */}
 
           {/* Contact Section */}
           <motion.div
@@ -58,19 +58,25 @@ function StackedCircularFooter({
           {/* Navigation */}
           <nav className="mb-8 flex flex-wrap justify-center gap-6">
             <a
-              href="#"
+              href="/"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Home
             </a>
             <a
-              href="#"
+              href="/terms"
+              className="text-gray-300 hover:text-purple-400 transition-colors"
+            >
+              Terms and Conditions
+            </a>
+            <a
+              href="/privacy"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
+              href="/download"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Download App

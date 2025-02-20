@@ -3,29 +3,55 @@ import { TextShimmer } from "./text-shimmer";
 import { useState, useEffect } from "react";
 import { cn } from "../../lib/utils";
 import { useInView } from "react-intersection-observer";
+import Marquee from "react-fast-marquee";
+import { TextGenerateEffect } from "./text-generate";
 
 export function FeaturesSectionWithBentoGrid() {
   const features = [
     {
       title: "See Your Look Before You Commit",
-      description:
-        "With Luuls AI, you no longer have to guess how clothes will look on you. See your style come to life instantly with our AI-powered try-on technology. Upload your photo, select the outfit, and watch as it’s perfectly fitted on your virtual self. No more second-guessing—make confident shopping decisions with the ultimate virtual fitting room.",
+      description: (
+        <p>
+          With <span className="luuls-gradient font-bold">Luuls AI</span>, you
+          no longer have to guess how clothes will look on you. See your style
+          come to life instantly with our AI-powered try-on technology. Upload
+          your photo, select the outfit, and watch as it's perfectly fitted on
+          your virtual self. No more second-guessing—make confident shopping
+          decisions with the ultimate virtual fitting room.
+        </p>
+      ),
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 md:col-span-6 border-b md:border-r border-purple-600/20 group hover:bg-purple-600/[0.015] transition-colors",
     },
     {
-      title: "Unleash Your Imagination with AI-Generated Art",
-      description:
-        "Luuls AI takes your creativity to the next level. With AI-powered prompts, you can generate unique images and visuals based on your ideas. Whether you’re designing for personal use or business, our AI model brings your concepts to life instantly, with limitless potential for creation.",
+      title: "See Yourself in Any Career with AI Face Swap",
+      description: (
+        <p>
+          Step into any profession with{" "}
+          <span className="luuls-gradient font-bold">Luuls AI</span>'s face swap
+          technology. Whether you're imagining a new career or just having fun
+          with professional roles, our AI lets you seamlessly swap faces into
+          various job roles, from doctors to astronauts, and everything in
+          between. Explore the possibilities, and see yourself in any job,
+          instantly.
+        </p>
+      ),
       skeleton: <SkeletonTwo />,
       className:
-        "col-span-1 md:col-span-6 border-b border-purple-600/20 group hover:bg-purple-600/[0.015] transition-colors",
+        "col-span-1 md:col-span-6 border-b border-purple-600/20 hover:bg-purple-600/[0.015] transition-colors",
     },
     {
-      title: "See Yourself in Any Career with AI Face Swap",
-      description:
-        "	Step into any profession with Luuls AI’s face swap technology. Whether you’re imagining a new career or just having fun with professional roles, our AI lets you seamlessly swap faces into various job roles, from doctors to astronauts, and everything in between. Explore the possibilities, and see yourself in any job, instantly.",
+      title: "Unleash Your Imagination with AI-Generated Art",
+      description: (
+        <p>
+          <span className="luuls-gradient font-bold">Luuls AI</span> takes your
+          creativity to the next level. With AI-powered prompts, you can
+          generate unique images and visuals based on your ideas. Whether you're
+          designing for personal use or business, our AI model brings your
+          concepts to life instantly, with limitless potential for creation.
+        </p>
+      ),
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 md:col-span-6 border-b md:border-r border-purple-600/20 group hover:bg-purple-600/[0.015] transition-colors",
@@ -38,14 +64,14 @@ export function FeaturesSectionWithBentoGrid() {
   });
 
   return (
-    <div className="relative z-20 py-20 lg:py-40 page-padding-x">
-      <div className="px-8 mb-20" ref={ref}>
+    <div className="relative py-20 page-padding-x max-component-width">
+      <div className="mb-20" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold max-w-5xl mx-auto text-center tracking-tight">
+          <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-balance">
               More Than Just Try-On
               <br />
@@ -53,15 +79,17 @@ export function FeaturesSectionWithBentoGrid() {
             </span>
           </h2>
 
-          <p className="text-basic text-center max-w-xl mx-auto mt-6">
+          <p className="text-basic text-center max-w-3xl mx-auto mt-6">
             <b>
-              Luuls AI isn’t just about trying on clothes – it’s about
-              transforming your entire visual identity.
+              <span className="luuls-gradient">Luuls AI</span> isn't just about
+              trying on clothes – it's about transforming your entire visual
+              identity.
             </b>{" "}
             Whether you want to experiment with new outfits, see yourself in
             different professional roles, or generate stunning AI-powered
-            visuals, Luuls AI brings the future of digital styling to your
-            fingertips.
+            visuals,{" "}
+            <span className="luuls-gradient font-semibold">Luuls AI</span>{" "}
+            brings the future of digital styling to your fingertips.
           </p>
         </motion.div>
       </div>
@@ -118,7 +146,7 @@ export const SkeletonOne = () => {
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="w-full flex gap-8 p-5 mx-auto bg-dark shadow-2xl h-full border border-purple-600/20 rounded-xl">
+        <div className="w-full flex gap-8 p-5 mx-auto bg-custom-dark shadow-2xl h-full border border-purple-600/20 rounded-xl">
           {/* Left side - Image */}
           <div className="w-1/2 relative group overflow-hidden rounded-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -136,39 +164,43 @@ export const SkeletonOne = () => {
 
           {/* Right side - Text Content */}
           <div className="w-1/2 flex flex-col justify-center space-y-4 text-white">
-            <h3 className="small-sub-title-basic">Why Try-On with Luuls AI?</h3>
-            <p className="small-text-basic">
+            <h3 className="small-sub-title-basic">
+              Why Try-On with <span className="luuls-gradient">Luuls AI</span> ?
+            </h3>
+            <p className="text-basic">
               Finding the perfect outfit has never been easier. With AI-powered
               try-on technology, you can see how different styles fit you before
               making a decision. No more uncertainty – just confidence in every
               look.
             </p>
-            <ul className="space-y-2 text-sm text-basic">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                <b>Instant Previews </b> – See outfits on yourself in seconds.
-              </li>
-
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                <b>Realistic & Accurate </b> – AI-enhanced precision for
-                lifelike results.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                <b>No More Returns </b> – Shop smarter and avoid wrong
-                purchases.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                <b>Endless Styles </b> – Try out as many outfits as you like,
-                risk-free.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                <b>Seamless Shopping </b> – A smarter, more interactive shopping
-                experience.
-              </li>
+            <ul className="space-y-2 text-basic">
+              {[
+                {
+                  title: "Realistic",
+                  desc: "AI-enhanced precision for lifelike results.",
+                },
+                {
+                  title: "Instant Previews",
+                  desc: "See outfits on yourself in seconds.",
+                },
+                {
+                  title: "Endless Styles",
+                  desc: "Try out as many outfits as you like, risk-free.",
+                },
+                {
+                  title: "Share with Friends",
+                  desc: "Get opinions from friends by sharing virtual try-on results.",
+                },
+                {
+                  title: "Use Anywhere, Anytime",
+                  desc: "Access the try-on feature on your phone or computer anytime.",
+                },
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-x-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-3.5" />
+                  <p className="">{item.title}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -180,66 +212,55 @@ export const SkeletonOne = () => {
 export const SkeletonTwo = () => {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
   const images = [
-    "/images/aigenerated1.webp",
-    "/images/aigenerated2.jpg",
-    "/images/aigenerated3.jpeg",
-    "/images/aigenerated1.webp",
-    "/images/aigenerated2.jpg",
-    "/images/aigenerated3.jpeg",
+    "/images/face_swap/astronaut.png",
+    "/images/face_swap/doctor.png",
+    "/images/face_swap/rock_star.png",
+    "/images/face_swap/chef.png",
+    "/images/face_swap/dentist.png",
+    "/images/face_swap/ceo.png",
+    "/images/face_swap/engineer.png",
+    "/images/face_swap/fighter_pilot.png",
+    "/images/face_swap/firefighter.png",
+    "/images/face_swap/holywood.png",
+    "/images/face_swap/judge.png",
+    "/images/face_swap/pop_star.png",
   ];
 
   return (
-    <div className="relative w-full overflow-hidden h-[350px]" ref={ref}>
+    <div className="relative w-full overflow-hidden h-[440px]" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div
-          animate={{
-            x: [0, -1000],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="flex gap-3 pt-20 absolute whitespace-nowrap"
-        >
-          {/* First set of images */}
-          {images.map((image, idx) => (
-            <motion.div
-              key={`first-${idx}`}
-              initial={{ rotate: Math.random() * 20 - 10 }}
-              whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
-              className="relative w-64 h-64 rounded-xl p-2 bg-dark border border-purple-600/20 overflow-hidden"
-            >
-              <img
-                src={image}
-                alt={`Style ${idx + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </motion.div>
-          ))}
-          {/* Duplicate set for seamless loop */}
-          {images.map((image, idx) => (
-            <motion.div
-              key={`second-${idx}`}
-              initial={{ rotate: Math.random() * 20 - 10 }}
-              whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
-              className="relative w-64 h-64 rounded-xl p-2 bg-dark border border-purple-600/20 overflow-hidden"
-            >
-              <img
-                src={image}
-                alt={`Style ${idx + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="pt-14">
+          <Marquee
+            gradient={false}
+            speed={80}
+            pauseOnHover={false}
+            className="py-5"
+          >
+            {images.map((image, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ rotate: Math.random() * 20 - 10 }}
+                whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
+                className="relative w-80 h-80 rounded-xl mx-3 p-2 bg-custom-dark border border-purple-600/20  group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-10" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-10" />
+                <img
+                  src={image}
+                  alt={`Style ${idx + 1}`}
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 "
+                />
+              </motion.div>
+            ))}
+          </Marquee>
+        </div>
       </motion.div>
     </div>
   );
@@ -263,27 +284,26 @@ export const SkeletonThree = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [inView]); // Added inView as dependency
+  }, [inView]);
 
   return (
     <div ref={ref} className="w-full h-full mx-auto bg-transparent">
       <div className="flex flex-col space-y-5">
-        {/* Title with TextShimmer */}
-        <TextShimmer
-          className="text-2xl font-bold"
-          duration={generationPhase === "success" ? 0 : 2}
-        >
-          AI-Powered Prompt Generation
-        </TextShimmer>
+        <TextGenerateEffect
+          words="A mesmerizing sorceress, standing in the center of an enchanted, otherworldly garden suspended in the sky. Her face, delicate and radiant, glows with violet and pink (#FCA5D5) undertones, her eyes shimmering with an ancient, cosmic knowledge. A flowing, holographic cloak surrounds her, shifting between purple and pink hues, trailing behind her like the tail of a comet. Behind her, the garden is alive with bioluminescent plants that radiate soft, glowing colors, and in the distance, distant stars and nebulae stretch across the horizon, their light blending into the surreal landscape. Her hands are raised, summoning magic that dances through the air, casting flickering, holographic spells of light across the celestial sky."
+          className="text-lg font-light text-white"
+          duration={0.5}
+          play={inView}
+        />
 
         {/* Image Generation Area */}
-        <div className="relative w-full min-h-[700px] max-h-[700px] rounded-xl overflow-hidden">
-          <div className="absolute inset-0 bg-dark flex">
-            <div className="w-full px-10 pt-10">
+        <div className="relative w-full min-h-[480px] max-h-[960px] rounded-xl overflow-hidden">
+          <div className=" inset-0 bg-custom-dark flex">
+            <div className="w-full max-w-[800px] mx-auto">
               <motion.img
-                src="/images/aigenerated1.webp"
+                src="/images/prompt_generation.png"
                 alt="AI Generated Image"
-                className="w-full h-full object-contain max-h-[500px] relative"
+                className="w-full object-contain relative rounded-lg aspect-[4/3]"
                 initial={{
                   filter: "blur(40px)",
                   scale: 0.9,
