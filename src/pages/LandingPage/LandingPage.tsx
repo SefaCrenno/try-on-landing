@@ -136,7 +136,14 @@ export default function LandingPage() {
               <span className="luuls-gradient">Luuls AI</span>
             </h2>
           }
-          description="Stay ahead with the latest tweets from Luuls AI. Discover industry trends, expert insights, and real-time updates—all in one place!"
+          description={
+            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
+              Stay ahead with the latest tweets from{" "}
+              <span className="luuls-gradient font-semibold">Luuls AI</span>.
+              Discover industry trends, expert insights, and real-time
+              updates—all in one place!
+            </p>
+          }
           testimonials={testimonials}
         />
 

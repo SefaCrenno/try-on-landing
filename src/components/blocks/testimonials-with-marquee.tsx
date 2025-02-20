@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 
 interface TestimonialsSectionProps {
   title: React.ReactNode;
-  description: string;
+  description: React.ReactNode;
   testimonials: Array<{
     author: TestimonialAuthor;
     text: string;
@@ -50,9 +50,8 @@ export function TestimonialsSection({
             <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight">
               {title}
             </h2>
-            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
-              {description}
-            </p>
+
+            {description}
           </div>
         </motion.div>
 

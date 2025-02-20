@@ -1,20 +1,18 @@
 import { Button } from "./button";
-import { Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  Link,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
 import { ContactDialog } from "./contact-dialog";
 import { useInView } from "react-intersection-observer";
 
-function StackedCircularFooter({
-  contactInfo,
-}: {
-  contactInfo: {
-    title: string;
-    description: string;
-    buttonText: string;
-    onContact?: () => void;
-  };
-}) {
+function StackedCircularFooter() {
   //inView
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -23,63 +21,50 @@ function StackedCircularFooter({
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   return (
-    <footer className="bg-custom-dark py-16" ref={ref}>
+    <motion.footer
+      className="bg-custom-dark py-16"
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center">
-          {/* Logo Section */}
-          {/* <div className="mb-12 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-500/20 p-5">
-            <img src="/luuls.png" alt="Luuls AI" width={70} height={70} />
-          </div> */}
-
-          {/* Contact Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full max-w-md mb-12 p-6 rounded-lg text-center border border-purple-600/20 bg-gradient-to-r from-purple-600/5 to-pink-500/5"
-          >
-            <div className="inline-flex items-center justify-center p-2 rounded-full mb-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
-              <Mail className="h-5 w-5 text-purple-400" />
-            </div>
-            <h3 className="text-lg font-medium text-white mb-2">
-              {contactInfo.title}
-            </h3>
-            <p className="text-sm text-gray-300 mb-6">
-              {contactInfo.description}
-            </p>
-            <button
-              onClick={() => setIsDialogOpen(true)}
-              className="px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:opacity-90 transition-all hover:scale-105 duration-200 cursor-pointer"
-            >
-              {contactInfo.buttonText}
-            </button>
-          </motion.div>
-
           {/* Navigation */}
           <nav className="mb-8 flex flex-wrap justify-center gap-6">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Home
-            </a>
-            <a
-              href="/terms"
+            </Link>
+            <Link
+              to="/terms"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Terms and Conditions
-            </a>
-            <a
-              href="/privacy"
+            </Link>
+            <Link
+              to="/privacy"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="/download"
+            </Link>
+            <Link
+              to="/download"
               className="text-gray-300 hover:text-purple-400 transition-colors"
             >
               Download App
+            </Link>
+            <a
+              href="/#"
+              className="text-gray-300 hover:text-purple-400 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsDialogOpen(true);
+              }}
+            >
+              Contact Us
             </a>
           </nav>
 
@@ -129,7 +114,7 @@ function StackedCircularFooter({
 
         <ContactDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
