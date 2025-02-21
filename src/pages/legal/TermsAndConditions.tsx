@@ -23,7 +23,7 @@ export default function TermsAndConditions() {
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold mb-4">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-                  LUULS TERMS AND CONDITIONS
+                  LUULS AI TERMS AND CONDITIONS
                 </span>
               </h1>
               <p className="text-gray-400">Last Updated: 12.02.2025</p>
@@ -275,16 +275,7 @@ export default function TermsAndConditions() {
         </div>
       </div>
 
-      <StackedCircularFooter
-        contactInfo={{
-          title: "Still have questions?",
-          description: "Our support team is here to help you",
-          buttonText: "Contact Support",
-          onContact: () => {
-            window.location.href = "mailto:info@crenno.com";
-          },
-        }}
-      />
+      <StackedCircularFooter />
     </>
   );
 }

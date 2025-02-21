@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   items: {
     question: string;
     answer: string;
@@ -20,7 +20,7 @@ interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
-  ({ className, title, description, items, ...props }) => {
+  ({ className, title, description, items, ...props }, ref) => {
     //inView
     const { ref: ref1, inView } = useInView({
       threshold: 0.5,
@@ -45,11 +45,7 @@ const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
               {title}
             </span>
           </h2>
-          {description && (
-            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
-              {description}
-            </p>
-          )}
+          {description && description}
         </motion.div>
 
         {/* FAQ Items */}
@@ -76,7 +72,7 @@ const FaqItem = React.forwardRef<
     answer: string;
     index: number;
   }
->((props) => {
+>((props, ref) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { question, answer, index } = props;
 

@@ -10,7 +10,6 @@ interface TestimonialsSectionProps {
   testimonials: Array<{
     author: TestimonialAuthor;
     text: string;
-    href?: string;
   }>;
   className?: string;
 }
@@ -47,9 +46,9 @@ export function TestimonialsSection({
           className="page-padding-x max-component-width"
         >
           <div className="flex flex-col items-center gap-4 text-center">
-            <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight">
-              {title}
-            </h2>
+            {/* <h2 className="text-3xl lg:text-6xl font-bold max-w-3xl mx-auto text-center tracking-tight"> */}
+            {title}
+            {/* </h2> */}
 
             {description}
           </div>

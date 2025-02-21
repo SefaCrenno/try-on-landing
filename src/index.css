@@ -91,7 +91,7 @@
   }
 
   .text-basic {
-    @apply text-xl leading-relaxed text-gray-100;
+    @apply text-base md:text-xl leading-relaxed text-gray-100;
   }
 
   .small-text-basic {

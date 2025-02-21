@@ -1,16 +1,22 @@
 import { AppleIcon, PlayStoreIcon } from "./icons";
 import Navbar from "../../components/ui/Navbar";
-
+import { StackedCircularFooter } from "../../components/ui/stacked-circular-footer";
+import { motion } from "framer-motion";
 export default function DownloadPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-16 bg-[#030303] flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen pt-16 bg-background flex items-center justify-center relative overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
 
         {/* Content Container */}
-        <div className="relative z-10 max-component-width px-4 py-20 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative z-10 max-component-width px-4 py-20 sm:px-6 lg:px-8"
+        >
           <div className="text-center space-y-8 mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
@@ -62,11 +68,13 @@ export default function DownloadPage() {
             <img
               src="/screenshots/home-left-portrait.png" // Bu görseli projenize eklemeniz gerekecek
               alt="App mockup"
-              className="w-full max-w-md rounded-3xl shadow-2xl shadow-purple-600/20"
+              className="w-full max-w-md rounded-3xl drop-shadow-2xl drop-shadow-purple-600"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
+
+      <StackedCircularFooter />
     </>
   );
 }

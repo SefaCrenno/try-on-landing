@@ -2,7 +2,6 @@ import { cn } from "../../lib/utils";
 
 export interface TestimonialAuthor {
   name: string;
-  handle: string;
   avatar: string;
 }
 
@@ -12,11 +11,11 @@ interface TestimonialCardProps {
   href?: string;
 }
 
-export function TestimonialCard({ author, text, href }: TestimonialCardProps) {
+export function TestimonialCard({ author, text }: TestimonialCardProps) {
   return (
     <div
       className={cn(
-        "relative flex w-[340px] flex-col gap-4",
+        "relative flex w-[200px] md:w-[340px] flex-col gap-4",
         "rounded-2xl border border-purple-100 dark:border-purple-900/50",
         "bg-gray-200 dark:bg-gray-900/50 backdrop-blur-sm",
         "p-6 text-left shadow-xl shadow-purple-500/5",
@@ -36,7 +35,7 @@ export function TestimonialCard({ author, text, href }: TestimonialCardProps) {
         </svg>
       </div>
 
-      <p className="text-base text-gray-700 dark:text-gray-300 italic break-words line-clamp-5">
+      <p className="text-base text-gray-700 dark:text-gray-300 italic break-words line-clamp-4">
         "{text}"
       </p>
 
@@ -50,14 +49,6 @@ export function TestimonialCard({ author, text, href }: TestimonialCardProps) {
           <div className="text-sm font-semibold text-gray-900 dark:text-white truncate">
             {author.name}
           </div>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors truncate"
-          >
-            {author.handle}
-          </a>
         </div>
       </div>
     </div>

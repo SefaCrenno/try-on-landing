@@ -13,72 +13,46 @@ import { StackedCircularFooter } from "../../components/ui/stacked-circular-foot
 const testimonials = [
   {
     author: {
-      name: "Emma Thompson",
-      handle: "@emmaai",
-      avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+      name: "Olivia Bennett",
+      avatar: "/images/faces/OliviaBennett.png",
     },
-    text: "Say goodbye to the old way of trying on clothes! With Luuls AI, you can now try on outfits virtually and see your style before you commit. #AI #VirtualTryOn #FashionRevolution",
-    href: "https://twitter.com/emmaai",
+    text: "Luuls AI saved me from endless returns! Being able to virtually try clothes before buying has transformed my online shopping experience completely.",
   },
   {
     author: {
-      name: "David Park",
-      handle: "@davidtech",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      name: "Michael Zhang",
+      avatar: "/images/faces/MichaelZhang.png",
     },
-    text: "Luuls AI brings the future of fashion to your fingertips – instantly try on clothes, experiment with new styles, and shop smarter than ever! #AIFashion #VirtualStyling #TryBeforeYouBuy",
-    href: "https://twitter.com/davidtech",
+    text: "Found the perfect interview outfit by trying 15 different combinations in minutes with Luuls AI. The technology is impressively accurate.",
   },
   {
     author: {
-      name: "Sofia Rodriguez",
-      handle: "@sofiaml",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+      name: "Isabella Morales",
+      avatar: "/images/faces/IsabellaMorales.png",
     },
-    text: "Why guess how clothes will look on you when Luuls AI lets you see it instantly? Virtual fitting rooms are here, powered by AI! #AIFashion #SmartShopping #TryOn",
+    text: "Living hours from any decent mall, Luuls AI lets me see exactly how clothes fit my body type before ordering. A real game-changer!",
   },
   {
     author: {
       name: "John Smith",
-      handle: "@johnsmith",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      avatar: "/images/faces/JohnSmith.png",
     },
-    text: "With Luuls AI's face swap feature, you can now step into any career with just one click. From doctors to astronauts, the possibilities are endless! #AI #CareerTransformation #FaceSwap",
+    text: "Visualizing myself in medical scrubs with Luuls AI helped confirm my decision to switch careers at 42. Sometimes seeing is believing.",
   },
   {
     author: {
-      name: "John Smith2",
-      handle: "@johnsmith",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      name: "Sophia Carter",
+      avatar: "/images/faces/SophiaCarter.png",
     },
-    text: "Want to create stunning visuals from your ideas? Luuls AI's prompt-based image generation takes your imagination to a whole new level. The future of art is here. #AI #DigitalArt #CreativeAI",
-  },
-  {
-    author: {
-      name: "John Smith3",
-      handle: "@johnsmith",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    },
-    text: "From virtual try-ons to career face swaps, Luuls AI is unlocking new ways to interact with fashion, art, and even your own identity. The future is now! #AI #TechInnovation #LuulsAI",
+    text: "As an artist, Luuls AI's prompt engine captures nuance better than any other tool I've used. It perfectly visualized the book cover I had in mind.",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "How Does Luuls AI Work?",
+    question: "What is Luuls AI?",
     answer:
       "Luuls AI uses advanced artificial intelligence to help you try on clothes virtually, swap faces for career-based transformations, and generate unique visuals from prompts. It's a seamless, interactive experience designed to empower you in fashion, art, and beyond.",
-  },
-  {
-    question: "Is Luuls AI Free to Use?",
-    answer:
-      "Luuls AI offers both free and premium features. While basic features like virtual try-ons are available for everyone, some advanced tools, like AI-generated art and career face swaps, may require a subscription.",
   },
   {
     question: "How does the virtual try-on work?",
@@ -131,9 +105,9 @@ export default function LandingPage() {
 
         <TestimonialsSection
           title={
-            <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-balance">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 pb-1">
               Trending Insights from{" "}
-              <span className="luuls-gradient">Luuls AI</span>
+              <span className="luuls-white">Luuls AI</span>
             </h2>
           }
           description={
@@ -151,21 +125,17 @@ export default function LandingPage() {
 
         <FaqSection
           title="Frequently Asked Questions"
-          description="Everything you need to know about CrainnoAI"
+          description={
+            <p className="text-basic text-center max-w-3xl mx-auto mt-6">
+              Everything you need to know about{" "}
+              <span className="luuls-gradient font-semibold">Luuls AI</span>.
+            </p>
+          }
           items={FAQ_ITEMS}
         />
       </main>
 
-      <StackedCircularFooter
-        contactInfo={{
-          title: "Still have questions?",
-          description: "Our support team is here to help you",
-          buttonText: "Contact Support",
-          onContact: () => {
-            window.location.href = "mailto:info@crenno.com";
-          },
-        }}
-      />
+      <StackedCircularFooter />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Button } from "./button";
-import { Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
 import { ContactDialog } from "./contact-dialog";

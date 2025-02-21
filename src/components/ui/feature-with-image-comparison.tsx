@@ -207,7 +207,7 @@ function Feature() {
                   <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
                     No More Guesswork <br></br>
                     See It, Wear It with{" "}
-                    <span className="luuls-gradient">Luuls AI</span>
+                    <span className="luuls-white">Luuls AI</span>
                   </span>
                 </h2>
               </motion.div>
@@ -229,12 +229,12 @@ function Feature() {
               <img
                 src="/screenshots/left-portrait.png"
                 alt="feature8"
-                className="absolute left-0 top-0 z-10 h-full w-full object-cover select-none"
+                className="absolute left-0 top-0 z-10 h-full w-full object-contain select-none"
               />
             </div>
 
             <div
-              className="z-[1] relative w-full max-w-[170px] md:max-w-[280px] aspect-[9/19.5] overflow-hidden select-none"
+              className="z-[1] relative w-full max-w-[170px] md:max-w-[285px] aspect-[9/19.5] overflow-hidden select-none"
               onMouseMove={onMouseMove}
               onMouseUp={() => setOnMouseDown(false)}
               onTouchMove={onMouseMove}
@@ -278,7 +278,7 @@ function Feature() {
               <img
                 src="/screenshots/initial-portrait.png"
                 alt="feature8"
-                className="absolute left-0 top-0 z-10 h-full w-full object-cover select-none"
+                className="absolute left-0 top-0 z-10 h-full w-full object-contain select-none"
                 style={{
                   clipPath: "inset(0 0 0 " + inset + "%)",
                   userSelect: "none",
@@ -289,7 +289,7 @@ function Feature() {
               <img
                 src="/screenshots/result-portrait.png"
                 alt="darkmode-feature8.png"
-                className="absolute left-0 top-0 h-full w-full object-cover select-none"
+                className="absolute left-0 top-0 h-full w-full object-contain select-none"
                 style={{
                   userSelect: "none",
                   pointerEvents: "none",
@@ -299,9 +299,9 @@ function Feature() {
 
             <div className="-translate-x-1/2 -translate-y-4 rotate-[30deg] w-full max-w-[140px] md:max-w-[250px] aspect-[9/19.5] select-none">
               <img
-                src="/images/phone-portrait-1.png"
+                src="/screenshots/initial-portrait.png"
                 alt="feature8"
-                className="absolute left-0 top-0 z-10 h-full w-full object-cover select-none"
+                className="absolute left-0 top-0 z-10 h-full w-full object-contain select-none"
               />
             </div>
           </div>
