@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
                   LUULS AI PRIVACY POLICY
                 </span>
               </h1>
-              <p className="text-gray-400">Last Updated: 2025.20.02</p>
+              <p className="text-gray-400">Last Updated: 02.20.2025</p>
             </div>
 
             <div className="space-y-8 text-gray-300">

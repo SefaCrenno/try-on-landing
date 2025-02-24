@@ -64,11 +64,11 @@ export default function DownloadPage() {
           </div>
 
           {/* Phone Mockup */}
-          <div className="mt-20 flex justify-center">
+          <div className="mt-20 flex justify-center max-h-[500px]">
             <img
               src="/screenshots/home-left-portrait.png" // Bu görseli projenize eklemeniz gerekecek
               alt="App mockup"
-              className="w-full max-w-md rounded-3xl drop-shadow-2xl drop-shadow-purple-600"
+              className="max-h-[500px] aspect-iphone rounded-3xl drop-shadow-2xl drop-shadow-purple-600"
             />
           </div>
         </motion.div>

@@ -26,7 +26,7 @@ export default function TermsAndConditions() {
                   LUULS AI TERMS AND CONDITIONS
                 </span>
               </h1>
-              <p className="text-gray-400">Last Updated: 12.02.2025</p>
+              <p className="text-gray-400">Last Updated: 02.12.2025</p>
             </div>
 
             <div className="space-y-8 text-gray-300">

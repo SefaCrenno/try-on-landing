@@ -71,6 +71,9 @@
   .aspect-iphone {
     aspect-ratio: 9/19.5;
   }
+  .aspect-iphone-portrait {
+    aspect-ratio: 19.5/9;
+  }
 
   .luuls-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
