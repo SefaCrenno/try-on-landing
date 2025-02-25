@@ -198,7 +198,7 @@ function HeroGeometric({
               Your digital wardrobe, career swap, and creative studio in one.
             </p>
 
-            <div className="py-10 px-4 md:px-6 bg-custom-dark w-full">
+            <div className="py-10 px-4 md:px-6 w-full">
               <GlareCardDemo />
             </div>
 

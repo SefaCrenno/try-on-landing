@@ -357,6 +357,184 @@ export default function PrivacyPolicy() {
                       </li>
                     </ul>
                     <p className="mt-4">
+                      <b>
+                        General Data Protection Regulation (GDPR) Compliance
+                      </b>
+                    </p>
+                    <p className="mt-4">
+                      If you are located within the European Economic Area
+                      (EEA), we collect and process your data in accordance with
+                      GDPR regulations. This section explains why and how your
+                      data is collected, as well as the security measures in
+                      place to prevent unauthorized access or misuse.
+                    </p>
+
+                    <p className="mt-4">
+                      <b>GDPR Compliance and Data Protection</b>
+                    </p>
+
+                    <p className="mt-4">
+                      The General Data Protection Regulation (GDPR) establishes
+                      new obligations for companies regarding the collection and
+                      processing of individuals' personal data. It also
+                      strengthens compliance enforcement by increasing penalties
+                      for data breaches. More importantly, adhering to GDPR is
+                      fundamentally the right thing to do. At Luuls AI, we place
+                      a high priority on data privacy and have already
+                      implemented security and privacy measures that exceed
+                      regulatory requirements.
+                    </p>
+
+                    <p className="mt-4">
+                      <b>
+                        Individual Data Subject Rights – Data Access,
+                        Portability, and Deletion
+                      </b>
+                    </p>
+                    <p className="mt-4">
+                      We are committed to assisting our customers in complying
+                      with GDPR requirements for data subject rights. Luuls AI
+                      processes and stores personal data exclusively with
+                      vetted, DPA-compliant vendors. All conversation and
+                      personal data are retained for up to six years unless an
+                      account is years unless an account is deleted. In that
+                      case, all associated data is permanently erased within 60
+                      days, in accordance with our Terms of Service and Privacy
+                      Policy.
+                    </p>
+                    <p className="mt-4">
+                      We recognize that businesses working with EU customers
+                      must provide them with options to access, update,
+                      retrieve, and delete personal data. Luuls AI is designed
+                      as a self-service platform, allowing users to manage their
+                      own and their customers' data. Our customer support team
+                      is available to assist with any questions about API
+                      interactions.
+                    </p>
+
+                    <p className="mt-4">
+                      <b>California Residents’ Privacy Rights</b>
+                    </p>
+                    <p className="mt-4">
+                      The California Consumer Privacy Act (CCPA) requires us to
+                      disclose the categories of Personal Information collected,
+                      its usage, sources, and third-party sharing policies, as
+                      outlined in previous sections.
+                    </p>
+                    <b className="mt-4">
+                      California residents have the following rights under state
+                      law:
+                    </b>
+                    <ol className="list-decimal pl-6 space-y-2">
+                      <li>
+                        Categories of Personal Information we collect, use, or
+                        share.
+                      </li>
+                      <li>
+                        The purposes for which these categories are collected or
+                        used.
+                      </li>
+                      <li>
+                        Sources from which we obtain Personal Information.
+                      </li>
+                      <li>
+                        Specific pieces of Personal Information we have
+                        collected about you.
+                      </li>
+                    </ol>
+                    {/* Right to Equal Service – Exercising privacy rights will not result in discrimination.
+Right to Delete – You may request to close your account, and we will delete the collected Personal Information.
+Right to Opt-Out of Data Sales – Luuls AI does not sell personal data; however, California law allows consumers to opt out of such sales where applicable. */}
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>
+                        Right to Equal Service – Exercising privacy rights will
+                        not result in discrimination.
+                      </li>
+
+                      <li>
+                        Right to Delete – You may request to close your account,
+                        and we will delete the collected Personal Information.
+                      </li>
+
+                      <li>
+                        Right to Opt-Out of Data Sales – Luuls AI does not sell
+                        personal data; however, California law allows consumers
+                        to opt out of such sales where applicable.
+                      </li>
+                    </ul>
+                    <p className="mt-4">
+                      Requests must be responded to within one month. If you
+                      wish to exercise these rights, please contact us.
+                    </p>
+
+                    <p className="mt-4">
+                      We do not sell our users’ personal data. For further
+                      details, please reach out to us.
+                    </p>
+
+                    <b className="mt-4">
+                      {" "}
+                      California Online Privacy Protection Act (CalOPPA)
+                    </b>
+
+                    <p className="mt-4">
+                      CalOPPA mandates that we disclose the types of Personal
+                      Information collected, its usage, sources, and third-party
+                      sharing, all of which have been detailed above.
+                    </p>
+
+                    <p className="mt-4">
+                      <b>CalOPPA users have the following rights:</b>
+                    </p>
+
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>
+                        Right to Know and Access – You may request details
+                        about:
+                        <ol className="list-decimal pl-6 space-y-2">
+                          <li>
+                            Categories of Personal Information collected, used,
+                            or shared.
+                          </li>
+                          <li>
+                            The purposes for collecting or using this data.
+                          </li>
+                          <li>
+                            Sources from which we obtain Personal Information.
+                          </li>
+                          <li>
+                            Specific Personal Information stored about you.
+                          </li>
+                        </ol>
+                      </li>
+
+                      <li>
+                        Right to Equal Service – We do not discriminate based on
+                        privacy choices.
+                      </li>
+
+                      <li>
+                        Right to Delete – You may request to close your account,
+                        and we will delete your Personal Information.
+                      </li>
+
+                      <li>
+                        Right to Opt-Out of Data Sales – Luuls AI does not sell
+                        user data.
+                      </li>
+                    </ul>
+
+                    <p className="mt-4">
+                      Requests are addressed within one month. If you wish to
+                      exercise any of these rights, contact us.
+                    </p>
+
+                    <p className="mt-4">
+                      For further inquiries, please reach out to us.
+                    </p>
+
+                    {/* //... */}
+                    <p className="mt-4">
                       For inquiries regarding legal compliance, please contact
                       our Data Protection Officer at info@crenno.com
                     </p>

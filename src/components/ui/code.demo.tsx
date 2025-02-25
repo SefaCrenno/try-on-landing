@@ -17,7 +17,7 @@ export function GlareCardDemo() {
           alt="Screenshot"
         />
       </GlareCard>
-      <GlareCard className="flex flex-col items-start justify-end">
+      <GlareCard className="flex flex-col items-center justify-center">
         <img
           className="h-full w-full absolute inset-0 object-contain"
           src="/screenshots/ss3-portrait.png"

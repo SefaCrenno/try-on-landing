@@ -60,6 +60,7 @@ export function TestimonialsSection({
           transition={{ duration: 0.5 }}
           className="w-full"
         >
+          {/* Eğer boyutlar eleştirilirse bunu ekle iste üstteki divi max-w-7xl max-auto */}
           <div className="relative w-full overflow-hidden">
             <Marquee
               gradient={true}

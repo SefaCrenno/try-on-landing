@@ -138,7 +138,7 @@ export const SkeletonOne = () => {
   });
   return (
     <div
-      className="relative flex py-8 px-2 gap-10 max-h-[550px] transition-transform duration-300"
+      className="relative flex py-8 px-2 gap-10  transition-transform duration-300"
       ref={ref}
     >
       <motion.div

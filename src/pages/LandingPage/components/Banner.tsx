@@ -104,7 +104,7 @@ export function Banner({
       <div className="flex items-center sm:-my-1">
         <button
           type="button"
-          className="whitespace-nowrap rounded-md border border-purple-600 bg-purple-50 px-4 py-1.5 text-sm font-medium text-purple-700 transition-all hover:bg-purple-100 hover:text-purple-900"
+          className="whitespace-nowrap rounded-md border border-purple-600 bg-purple-50 px-4 py-1.5 text-sm font-medium text-purple-700 transition-all hover:bg-purple-100 hover:text-purple-900 cursor-pointer"
           onClick={action.onClick}
         >
           {action.label}

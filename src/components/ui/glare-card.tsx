@@ -54,6 +54,7 @@ export const GlareCard = ({
 
   const updateStyles = () => {
     if (refElement.current) {
+      //Animasyon istenilirse aşağıdaki kodu kullan
       // const { background, rotate, glare } = state.current;
       // refElement.current?.style.setProperty("--m-x", `${glare.x}%`);
       // refElement.current?.style.setProperty("--m-y", `${glare.y}%`);
@@ -63,6 +64,7 @@ export const GlareCard = ({
       // refElement.current?.style.setProperty("--bg-y", `${background.y}%`);
     }
   };
+
   return (
     <div
       style={containerStyle}
