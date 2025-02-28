@@ -16,27 +16,31 @@ const testimonials = [
       name: "Olivia Bennett",
       avatar: "/images/faces/OliviaBennett.png",
     },
-    text: "Luuls AI saved me from endless returns! Being able to virtually try clothes before buying has transformed my online shopping experience completely.",
+    // text: "Luuls AI saved me from endless returns! Being able to virtually try clothes before buying has transformed my online shopping experience completely.",
+    text: "Luuls AI saved me from endless returns! Now, I can virtually try on clothes before buying, making online shopping easier, faster, and stress-free. It’s a total game-changer!",
   },
   {
     author: {
       name: "Michael Zhang",
       avatar: "/images/faces/MichaelZhang.png",
     },
-    text: "Found the perfect interview outfit by trying 15 different combinations in minutes with Luuls AI. The technology is impressively accurate.",
+    // text: "Found the perfect interview outfit by trying 15 different combinations in minutes with Luuls AI. The technology is impressively accurate.",
+    text: "Found my perfect interview outfit in minutes with Luuls AI, trying 15 combinations. The technology is incredibly accurate!",
   },
   {
     author: {
       name: "Isabella Morales",
       avatar: "/images/faces/IsabellaMorales.png",
     },
-    text: "Living hours from any decent mall, Luuls AI lets me see exactly how clothes fit my body type before ordering. A real game-changer!",
+    // text: "Living hours from any decent mall, Luuls AI lets me see exactly how clothes fit my body type before ordering. A real game-changer!",
+    text: "Living hours away from any decent mall, I rely on Luuls AI to see exactly how clothes fit my body type before ordering. It’s a real game-changer that saves me time, money, and the hassle of returns!",
   },
   {
     author: {
       name: "John Smith",
       avatar: "/images/faces/JohnSmith.png",
     },
+    // text: "Visualizing myself in medical scrubs with Luuls AI helped confirm my decision to switch careers at 42. Sometimes seeing is believing.",
     text: "Visualizing myself in medical scrubs with Luuls AI helped confirm my decision to switch careers at 42. Sometimes seeing is believing.",
   },
   {
@@ -44,7 +48,8 @@ const testimonials = [
       name: "Sophia Carter",
       avatar: "/images/faces/SophiaCarter.png",
     },
-    text: "As an artist, Luuls AI's prompt engine captures nuance better than any other tool I've used. It perfectly visualized the book cover I had in mind.",
+    // text: "As an artist, Luuls AI's prompt engine captures nuance better than any other tool I've used. It perfectly visualized the book cover I had in mind.",
+    text: "As an artist, Luuls AI's prompt engine captures nuance better than any other tool I've used. It perfectly visualized the book cover I had in mind. This is the beginning of a new era for artists!",
   },
 ];
 
@@ -78,7 +83,7 @@ export default function LandingPage() {
     <>
       <Navbar />
 
-      <div className="pt-17 relative z-40 max-component-width">
+      {/* <div className="pt-17 relative z-40 max-component-width">
         <Banner
           show={showBanner}
           onHide={() => {
@@ -94,7 +99,7 @@ export default function LandingPage() {
           }}
           learnMoreUrl="#pricing"
         ></Banner>
-      </div>
+      </div> */}
 
       <main className="">
         <Hero />
@@ -104,6 +109,7 @@ export default function LandingPage() {
         <FeaturesSectionWithBentoGrid />
 
         <TestimonialsSection
+          className="max-component-width"
           title={
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 pb-1">
               Trending Insights from{" "}

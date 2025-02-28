@@ -61,7 +61,7 @@ export function TestimonialsSection({
           className="w-full"
         >
           {/* Eğer boyutlar eleştirilirse bunu ekle iste üstteki divi max-w-7xl max-auto */}
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden ">
             <Marquee
               gradient={true}
               gradientColor="#030303"

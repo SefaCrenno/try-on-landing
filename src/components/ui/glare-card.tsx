@@ -117,7 +117,7 @@ export const GlareCard = ({
         }
       }}
     >
-      <div className="h-full grid will-change-transform origin-center duration-500 ease-out [transform:rotateY(var(--r-x))_rotateX(var(--r-y))] rounded-[var(--radius)]  bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-sm group overflow-hidden ">
+      <div className="h-full grid will-change-transform origin-center duration-500 ease-out [transform:rotateY(var(--r-x))_rotateX(var(--r-y))] rounded-[var(--radius)]  backdrop-blur-sm group overflow-hidden ">
         <div className="w-full h-full grid [grid-area:1/1] mix-blend-soft-light [clip-path:inset(0_0_0_0_round_var(--radius))]">
           <div
             className={cn(

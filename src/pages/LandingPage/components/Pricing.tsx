@@ -120,7 +120,7 @@ export default function Pricing() {
         }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mt-16 grid grid-cols-3 gap-8 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
@@ -161,7 +161,7 @@ export default function Pricing() {
                         </p>
                       ) : null}
                       <p className="mt-2 flex items-baseline gap-x-1">
-                        <span className="text-2xl md:text-4xl font-bold tracking-tight text-white">
+                        <span className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                           $
                           {plan.price.original > plan.price.discounted
                             ? plan.price.discounted

@@ -299,7 +299,7 @@ function Feature() {
 
             <div className="-translate-x-1/2 -translate-y-4 rotate-[30deg] w-full max-w-[140px] md:max-w-[250px] aspect-[9/19.5] select-none">
               <img
-                src="/screenshots/initial-portrait.png"
+                src="/screenshots/right-portrait.png"
                 alt="feature8"
                 className="absolute left-0 top-0 z-10 h-full w-full object-contain select-none"
               />
